@@ -21,7 +21,7 @@ def data_setup():
     df = df.sample(frac=1).reset_index(drop=True)
 
     # Return plagiarized dataset as list
-    return list(df['Review'].loc[0:1000])
+    return list(df['Review'].loc[0:2500])
 
 def KMP_Plagiarism_Detector(dataset):
 
@@ -95,7 +95,7 @@ def KMP_Plagiarism_Detector(dataset):
     # Get total processing time
     processing_time = (time.time() - start_time)
 
-    # print(f"KMP Percentage plagiarised: {match_counter / total_words_in_sample_text * 100}%")
+    print(f"KMP Percentage plagiarized: {match_counter / total_words_in_sample_text * 100}%")
 
     return [total_words_in_sample_text, processing_time]
 
@@ -129,10 +129,11 @@ def LCSS_Plagiarism_Detector(dataset):
 
         total_words_in_sample_text += len(text)
 
+
     # Get total processing time
     processing_time = (time.time() - start_time)
 
-    # print(f"LCSS Percentage plagiarised: {sum_lcss / total_words_in_sample_text * 100}%")
+    print(f"LCSS Percentage plagiarized: {sum_lcss / (total_words_in_sample_text * x) * 100}%")
 
     return [total_words_in_sample_text, processing_time]
 
@@ -203,6 +204,8 @@ def Rabin_Karp_Plagiarism_Detector(dataset):
     total_words_in_sample_text = 0
 
     start_time = time.time()
+
+    percentage_plagiarized = 0
     
     for i in range(x):
         content_a = dataset[i]
@@ -217,7 +220,9 @@ def Rabin_Karp_Plagiarism_Detector(dataset):
 
         total_words_in_sample_text += len(content_a.split())
 
-        # print('The percentage of plagiarism held by both documents is  {0}%'.format(get_rate()))
+        percentage_plagiarized = percentage_plagiarized + get_rate()
+
+    print('Rabin-Karp Percentage plagiarized:  {0}%'.format(percentage_plagiarized / x))
 
     # Get total processing time
     processing_time = (time.time() - start_time)
