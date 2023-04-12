@@ -6,30 +6,33 @@ Nathania Hendradjaja
 # Table of Contents
 - [Table of Contents](#table-of-contents)
 - [Requirements](#requirements)
-    - [Python3](#python3)
-    - [Pandas Library](#pandas-library)
+    - [Install Python3](#install-python3)
+    - [Install Python Libraries](#install-python-libraries)
 - [How to Run](#how-to-run)
-    - [Setup Dataset](#setup-dataset)
+    - [Run main.py](#run-mainpy)
 
 # Requirements
 
-# Python3
+# Install Python3
 If you don't already have Python3 installed, please visit this link for instructions: [https://www.python.org/downloads/](https://www.python.org/downloads/)
 
-# Pandas Library
-After you have Python3 installed, run the following command in your Terminal or Console to install the Pandas library:
+# Install Python Libraries
+After you have Python3 installed, run the following command in your Terminal or Console to install the required libraries, including Pandas and Matplotlib
 
 ```bash
-python3 -m pip install pandas
+python3 -m pip install pandas matplotlib
 ```
 
 # How to Run
 
-## Setup Dataset
-To setup the data set, run the `data_setup.py` Python file by executing the following command:
+## Run main.py
+The `main.py` file shoould:
+
+1. Setup the dataset: Read the public Rotten Tomatoes Reviews dataset and duplicate arbitrary rows and then shuffle the row orders to create the plagiarized dataset
+2. Run KMP plagiarism detector and plot the processing time
+
+Run the `main.py` Python by executing the following command:
 
 ```python
-python3 data_setup.py
+python3 main.py
 ```
-
-This will read the file `rt_reviews.csv` and create a new file called `rt_reviews_plagiarized.csv`. Both files are in the `data` folder.
