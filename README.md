@@ -1,9 +1,9 @@
-Plagiarism Detector
+# Plagiarism Detector
 
-Nihad Alakbarzade
-Nathania Hendradjaja
+- Nihad Alakbarzade
+- Nathania Hendradjaja
 
-# Table of Contents
+## Table of Contents
 - [Table of Contents](#table-of-contents)
 - [Requirements](#requirements)
     - [Install Python3](#install-python3)
@@ -11,25 +11,28 @@ Nathania Hendradjaja
 - [How to Run](#how-to-run)
     - [Run main.py](#run-mainpy)
 
-# Requirements
+## Requirements
 
-# Install Python3
+### Install Python3
 If you don't already have Python3 installed, please visit this link for instructions: [https://www.python.org/downloads/](https://www.python.org/downloads/)
 
-# Install Python Libraries
-After you have Python3 installed, run the following command in your Terminal or Console to install the required libraries, including Pandas and Matplotlib
+### Install Python Libraries
+After you have Python3 installed, run the following command in your Terminal or Console to install the required libraries, including Pandas, Numpy, and Matplotlib
 
 ```bash
-python3 -m pip install pandas matplotlib
+python3 -m pip install pandas numpy matplotlib
 ```
 
-# How to Run
+## How to Run
 
-## Run main.py
+### Run main.py
 The `main.py` file shoould:
 
 1. Setup the dataset: Read the public Rotten Tomatoes Reviews dataset and duplicate arbitrary rows and then shuffle the row orders to create the plagiarized dataset
-2. Run KMP plagiarism detector and plot the processing time
+2. Run KMP plagiarism detector
+3. Run the LCSS plagiarism detector
+4. Run the Rabin Karp plagiarism detector
+5. Plot all processing time against the number of words
 
 Run the `main.py` Python by executing the following command:
 
